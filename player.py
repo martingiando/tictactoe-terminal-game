@@ -83,13 +83,13 @@ class GeniusComputerPlayer(Player):
             # step 3: undo the move
             state.board[possible_move] = ' '
             state.current_winner = None
-            sim_score['position'] = possible_move # otherwise this will get messed up from the recursion  # noqa: E501
+            sim_score['position'] = possible_move 
 
             # step 4: update the dictionaries if necessary
-            if player == max_player: # we are trying to maximize the max_player
+            if player == max_player:
                 if sim_score['score'] > best['score']:
                     best = sim_score
-            else: # but minimize the other player
+            else:
                 if sim_score['score'] < best['score']:
                     best = sim_score
         return best
